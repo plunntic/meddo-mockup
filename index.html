@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>meddo – RIS, PACS i teleradiologia dla pracowni diagnostyki obrazowej</title>
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div style="background: #ffffff; min-width: 320px">
+
+<!-- HERO -->
+<div style="padding: 16px">
+<header style="background: #376eae; border-radius: 32px; position: relative; overflow: hidden; padding-top: 24px">
+<svg aria-hidden="true" width="520" height="420" viewBox="0 0 520 420" style="position: absolute; right: -40px; top: -20px; pointer-events: none">
+<g fill="#ffffff" opacity="0.10">
+<g transform="translate(80 90)"><rect x="-22" y="-7" width="44" height="14" rx="7"></rect><rect x="-7" y="-22" width="14" height="44" rx="7"></rect></g>
+<g transform="translate(250 60)"><rect x="-14" y="-4.5" width="28" height="9" rx="4.5"></rect><rect x="-4.5" y="-14" width="9" height="28" rx="4.5"></rect></g>
+<g transform="translate(420 140)"><rect x="-30" y="-10" width="60" height="20" rx="10"></rect><rect x="-10" y="-30" width="20" height="60" rx="10"></rect></g>
+<g transform="translate(330 260)"><rect x="-14" y="-4.5" width="28" height="9" rx="4.5"></rect><rect x="-4.5" y="-14" width="9" height="28" rx="4.5"></rect></g>
+<g transform="translate(470 340)"><rect x="-18" y="-6" width="36" height="12" rx="6"></rect><rect x="-6" y="-18" width="12" height="36" rx="6"></rect></g>
+</g>
+<g fill="#ffffff" opacity="0.10" transform="translate(180 200)"><rect x="-16" y="-5" width="32" height="10" rx="5"></rect><rect x="-5" y="-16" width="10" height="32" rx="5"></rect></g>
+</svg>
+<nav aria-label="Główna nawigacja" class="dark" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+<a href="index.html" aria-label="meddo – strona główna" style="display: flex"><img src="img/meddo-logo.svg" alt="meddo" style="height: 34px; width: auto; display: block"></a>
+<div class="hide-m" style="display: flex; gap: 32px; align-items: center">
+<a class="nl" href="system-ris.html">System RIS</a>
+<a class="nl" href="#">System PACS</a>
+<a class="nl" href="#">Teleradiologia</a>
+<a class="nl" href="#">O nas</a>
+<a class="nl" href="#">Kontakt</a>
+</div>
+<div style="display: flex; gap: 24px; align-items: center">
+<a class="nl hide-m" href="https://app.meddo.pl/zaloguj" target="_blank" rel="noopener noreferrer">Zaloguj się</a>
+<a class="btn btn-light" href="#kontakt">Umów prezentację</a>
+</div>
+</nav>
+<div class="dark" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 96px 24px 0; display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-end">
+<div style="flex: 1 1 440px; padding-bottom: 112px; display: flex; flex-direction: column">
+<div style="font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; color: #ffffff; text-transform: uppercase">RIS · PACS · Teleradiologia</div>
+<h1 style="margin: 8px 0 0; font-size: clamp(40px, 5vw, 64px); line-height: 1.07; font-weight: 800; letter-spacing: -1.5px; color: #ffffff">Cała pracownia w&nbsp;jednym rytmie<svg aria-hidden="true" width="34" height="34" viewBox="0 0 34 34" style="display: inline-block; margin-left: 8px; vertical-align: baseline"><g fill="#fe7363"><rect x="0" y="12" width="34" height="10" rx="5"></rect><rect x="12" y="0" width="10" height="34" rx="5"></rect></g></svg></h1>
+<p style="margin: 24px 0 0; max-width: 520px; font-size: 20px; line-height: 32px; color: #ffffff">Rejestracja, badanie, obrazy, opis i rozliczenia NFZ – w jednym systemie, w przeglądarce. Ty prowadzisz pracownię, meddo pilnuje, żeby nic nie zgubiło się po drodze.</p>
+<div style="margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap">
+<a class="btn btn-light" href="#kontakt">Umów prezentację</a>
+<a class="btn btn-ghost-light" href="#ekosystem">Zobacz, jak to działa</a>
+</div>
+</div>
+<div style="flex: 1 1 560px; position: relative; min-width: 0">
+<div style="background: rgba(255,255,255,0.16); padding: 10px 10px 0; border-radius: 20px 20px 0 0">
+<img src="img/ris-grafik.webp" alt="Grafik wizyt w meddo RIS – lista badań na dany dzień" style="display: block; width: 100%; height: 400px; object-fit: cover; object-position: left top; border-radius: 12px 12px 0 0">
+</div>
+</div>
+</div>
+</header>
+</div>
+
+<!-- EKOSYSTEM -->
+<section id="ekosystem" style="padding: 128px 24px">
+<div style="max-width: 1200px; margin: 0 auto">
+<div style="max-width: 720px">
+<div style="font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; color: #376eae; text-transform: uppercase">Jeden ekosystem</div>
+<h2 style="margin: 8px 0 0; font-size: clamp(32px, 3.4vw, 44px); line-height: 1.18; font-weight: 700; letter-spacing: -0.8px">Trzy moduły, które naprawdę ze sobą <span style="color: #376eae">rozmawiają</span></h2>
+<p style="margin: 24px 0 0; font-size: 20px; line-height: 32px; color: #5a6778">Nie musisz spinać systemów od różnych dostawców. RIS, PACS i teleradiologia meddo dzielą jedne dane, jedną listę badań i jedno wsparcie techniczne.</p>
+</div>
+
+<div style="margin-top: 64px">
+<div class="eko-bar" data-mode="auto" role="tablist" aria-label="Moduły meddo">
+<button type="button" role="tab" id="eko-t0" aria-controls="eko-panel-0" aria-selected="true" class="tab on"><span class="tl">RIS<span class="ti"><span class="ic-auto"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" style="transform: rotate(-90deg)"><circle cx="12" cy="12" r="9" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="3"></circle><circle class="ring" cx="12" cy="12" r="9" fill="none" stroke="#fe7363" stroke-width="3" stroke-linecap="round" stroke-dasharray="56.55" stroke-dashoffset="0"></circle></svg></span><span class="ic-manual"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18"><g fill="#fe7363"><rect x="0" y="6" width="18" height="6" rx="3"></rect><rect x="6" y="0" width="6" height="18" rx="3"></rect></g></svg></span></span></span></button>
+<span class="eko-link" aria-hidden="true"></span>
+<button type="button" role="tab" id="eko-t1" tabindex="-1" aria-controls="eko-panel-1" aria-selected="false" class="tab"><span class="tl">PACS<span class="ti"><span class="ic-auto"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" style="transform: rotate(-90deg)"><circle cx="12" cy="12" r="9" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="3"></circle><circle class="ring" cx="12" cy="12" r="9" fill="none" stroke="#fe7363" stroke-width="3" stroke-linecap="round" stroke-dasharray="56.55" stroke-dashoffset="0"></circle></svg></span><span class="ic-manual"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18"><g fill="#fe7363"><rect x="0" y="6" width="18" height="6" rx="3"></rect><rect x="6" y="0" width="6" height="18" rx="3"></rect></g></svg></span></span></span></button>
+<span class="eko-link" aria-hidden="true"></span>
+<button type="button" role="tab" id="eko-t2" tabindex="-1" aria-controls="eko-panel-2" aria-selected="false" class="tab"><span class="tl">Teleradiologia<span class="ti"><span class="ic-auto"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" style="transform: rotate(-90deg)"><circle cx="12" cy="12" r="9" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="3"></circle><circle class="ring" cx="12" cy="12" r="9" fill="none" stroke="#fe7363" stroke-width="3" stroke-linecap="round" stroke-dasharray="56.55" stroke-dashoffset="0"></circle></svg></span><span class="ic-manual"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18"><g fill="#fe7363"><rect x="0" y="6" width="18" height="6" rx="3"></rect><rect x="6" y="0" width="6" height="18" rx="3"></rect></g></svg></span></span></span></button>
+</div>
+
+<div style="margin-top: 40px">
+<div class="eko-slide-wrap" data-slide="0">
+<div class="slide" id="eko-panel-0" role="tabpanel" aria-labelledby="eko-t0" style="background: #f4f6f9; border-radius: 16px; padding: 40px; box-sizing: border-box; min-height: 500px; overflow: hidden; box-shadow: 0 1px 2px rgba(27,37,51,0.04), 0 8px 24px -10px rgba(27,37,51,0.10); display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: center">
+<div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 16px">
+<span style="align-self: flex-start; background: #eaf1f9; color: #376eae; border-radius: 9999px; padding: 4px 12px; font-size: 13px; line-height: 20px; font-weight: 700; letter-spacing: 1px">RIS</span>
+<h3 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 700; letter-spacing: -0.3px">Serce pracowni</h3>
+<p style="margin: 0; font-size: 18px; line-height: 28px; color: #5a6778">Porządkuje wszystko od rezerwacji po rozliczenie, żeby zespół zajmował się pacjentem, nie papierami.</p>
+<ul style="list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 24px">
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 22px; height: 22px; margin-top: 1px; border-radius: 9999px; background: #50b34f; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 7.5l3 3 6-7"></path></svg></span>Grafik, rejestracja i worklisty (MPS)</li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 22px; height: 22px; margin-top: 1px; border-radius: 9999px; background: #50b34f; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 7.5l3 3 6-7"></path></svg></span>Integracje z HIS i EDM (HL7)</li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 22px; height: 22px; margin-top: 1px; border-radius: 9999px; background: #50b34f; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 7.5l3 3 6-7"></path></svg></span>Raporty NFZ, KSeF i P1</li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 22px; height: 22px; margin-top: 1px; border-radius: 9999px; background: #50b34f; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 7.5l3 3 6-7"></path></svg></span>Rezerwacje online, także przez ZnanyLekarz</li>
+</ul>
+<a class="more" href="system-ris.html" style="margin-top: 8px">Poznaj system RIS →</a>
+</div>
+<div style="flex: 1 1 480px; min-width: 0; align-self: flex-end; margin: 24px -40px -40px 0; box-sizing: border-box">
+<div style="background: #ffffff; border: 1px solid #d9dee6; border-right: 0; border-bottom: 0; border-radius: 12px 0 0 0; box-sizing: border-box; overflow: hidden">
+<div aria-hidden="true" style="height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 16px; border-bottom: 1px solid #d9dee6"><span style="flex: none; width: 10px; height: 10px; border-radius: 9999px; background: #d9dee6"></span><span style="flex: none; width: 10px; height: 10px; border-radius: 9999px; background: #d9dee6"></span><span style="flex: none; width: 10px; height: 10px; border-radius: 9999px; background: #d9dee6"></span><span style="margin-left: 16px; flex: 0 1 280px; height: 20px; border-radius: 9999px; background: #f4f6f9"></span></div>
+<img src="img/ris-grafik.webp" alt="Grafik wizyt w meddo RIS" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: left top">
+</div>
+</div>
+</div>
+</div>
+
+<div class="eko-slide-wrap" data-slide="1" hidden>
+<div class="slide" id="eko-panel-1" role="tabpanel" aria-labelledby="eko-t1" style="background: #f4f6f9; border-radius: 16px; padding: 40px; box-sizing: border-box; min-height: 500px; overflow: hidden; box-shadow: 0 1px 2px rgba(27,37,51,0.04), 0 8px 24px -10px rgba(27,37,51,0.10); display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: center">
+<div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 16px">
+<span style="align-self: flex-start; background: #eaf1f9; color: #376eae; border-radius: 9999px; padding: 4px 12px; font-size: 13px; line-height: 20px; font-weight: 700; letter-spacing: 1px">PACS</span>
+<h3 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 700; letter-spacing: -0.3px">Obrazy zawsze pod ręką</h3>
+<p style="margin: 0; font-size: 18px; line-height: 28px; color: #5a6778">Szybkie, bezpieczne archiwum DICOM, które nie każe radiologom czekać na kolejną serię.</p>
+<ul style="list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 24px">
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 22px; height: 22px; margin-top: 1px; border-radius: 9999px; background: #50b34f; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 7.5l3 3 6-7"></path></svg></span>Płynna praca z dużymi seriami</li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 22px; height: 22px; margin-top: 1px; border-radius: 9999px; background: #50b34f; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 7.5l3 3 6-7"></path></svg></span>W Twojej serwerowni lub w chmurze</li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 22px; height: 22px; margin-top: 1px; border-radius: 9999px; background: #50b34f; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 7.5l3 3 6-7"></path></svg></span>DICOM, HL7 i gotowość na narzędzia AI</li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 22px; height: 22px; margin-top: 1px; border-radius: 9999px; background: #50b34f; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 7.5l3 3 6-7"></path></svg></span>Redundancja, audyt i archiwum długoterminowe</li>
+</ul>
+<a class="more" href="#" style="margin-top: 8px">Poznaj system PACS →</a>
+</div>
+<div style="flex: 1 1 480px; min-width: 0; align-self: flex-end; margin: 24px -40px -40px 0; box-sizing: border-box">
+<div style="background: #ffffff; border: 1px solid #d9dee6; border-right: 0; border-bottom: 0; border-radius: 12px 0 0 0; box-sizing: border-box; overflow: hidden">
+<div aria-hidden="true" style="height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 16px; border-bottom: 1px solid #d9dee6"><span style="flex: none; width: 10px; height: 10px; border-radius: 9999px; background: #d9dee6"></span><span style="flex: none; width: 10px; height: 10px; border-radius: 9999px; background: #d9dee6"></span><span style="flex: none; width: 10px; height: 10px; border-radius: 9999px; background: #d9dee6"></span><span style="margin-left: 16px; flex: 0 1 280px; height: 20px; border-radius: 9999px; background: #f4f6f9"></span></div>
+<img src="img/pacs-viewer.webp" alt="Przeglądarka DICOM w meddo – badanie MR głowy" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: left top">
+</div>
+</div>
+</div>
+</div>
+
+<div class="eko-slide-wrap" data-slide="2" hidden>
+<div class="slide" id="eko-panel-2" role="tabpanel" aria-labelledby="eko-t2" style="background: #f4f6f9; border-radius: 16px; padding: 40px; box-sizing: border-box; min-height: 500px; overflow: hidden; box-shadow: 0 1px 2px rgba(27,37,51,0.04), 0 8px 24px -10px rgba(27,37,51,0.10); display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: center">
+<div style="flex: 1 1 360px; display: flex; flex-direction: column; gap: 16px">
+<span style="align-self: flex-start; background: #eaf1f9; color: #376eae; border-radius: 9999px; padding: 4px 12px; font-size: 13px; line-height: 20px; font-weight: 700; letter-spacing: 1px">TELERADIOLOGIA</span>
+<h3 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 700; letter-spacing: -0.3px">Opisy z dowolnego miejsca</h3>
+<p style="margin: 0; font-size: 18px; line-height: 28px; color: #5a6778">W pracowni czy zdalnie – bez znaczenia. Radiolog pracuje na tych samych danych, z tym samym komfortem.</p>
+<ul style="list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 24px">
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 22px; height: 22px; margin-top: 1px; border-radius: 9999px; background: #50b34f; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 7.5l3 3 6-7"></path></svg></span>Bezpieczny dostęp dla zespołów zdalnych</li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 22px; height: 22px; margin-top: 1px; border-radius: 9999px; background: #50b34f; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 7.5l3 3 6-7"></path></svg></span>Integracja z popularnymi przeglądarkami DICOM</li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 22px; height: 22px; margin-top: 1px; border-radius: 9999px; background: #50b34f; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 7.5l3 3 6-7"></path></svg></span>Monitorowanie i raporty czasu opisów</li>
+<li style="display: flex; gap: 12px"><span aria-hidden="true" style="flex: none; width: 22px; height: 22px; margin-top: 1px; border-radius: 9999px; background: #50b34f; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 7.5l3 3 6-7"></path></svg></span>Gotowa współpraca z Radfellows</li>
+</ul>
+<a class="more" href="#" style="margin-top: 8px">Poznaj teleradiologię →</a>
+</div>
+<div style="flex: 1 1 480px; min-width: 0; align-self: flex-end; margin: 24px -40px -40px 0; box-sizing: border-box">
+<div style="background: #ffffff; border: 1px solid #d9dee6; border-right: 0; border-bottom: 0; border-radius: 12px 0 0 0; box-sizing: border-box; overflow: hidden">
+<div aria-hidden="true" style="height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 16px; border-bottom: 1px solid #d9dee6"><span style="flex: none; width: 10px; height: 10px; border-radius: 9999px; background: #d9dee6"></span><span style="flex: none; width: 10px; height: 10px; border-radius: 9999px; background: #d9dee6"></span><span style="flex: none; width: 10px; height: 10px; border-radius: 9999px; background: #d9dee6"></span><span style="margin-left: 16px; flex: 0 1 280px; height: 20px; border-radius: 9999px; background: #f4f6f9"></span></div>
+<img src="img/editor-opisu.webp" alt="Edytor opisu badania w ciemnym motywie dla radiologa" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: left top">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ROLE -->
+<section style="padding: 128px 24px; background: #eaf1f9">
+<div style="max-width: 1200px; margin: 0 auto">
+<div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end; justify-content: space-between">
+<div style="max-width: 640px">
+<div style="font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; color: #376eae; text-transform: uppercase">JEDEN PROCES, TRZY PERSPEKTYWY</div>
+<h2 style="margin: 8px 0 0; font-size: clamp(32px, 3.4vw, 44px); line-height: 1.18; font-weight: 700; letter-spacing: -0.8px">Każdy dostaje to, czego potrzebuje w swojej roli</h2>
+</div>
+<p style="margin: 0; max-width: 420px; font-size: 18px; line-height: 28px; color: #5a6778">Rejestracja, radiolog i pacjent widzą ten sam proces – każdy ze swojej strony i bez zbędnych kliknięć.</p>
+</div>
+<div style="margin-top: 64px; display: flex; flex-wrap: wrap; gap: 40px">
+
+<article style="flex: 1 1 320px; background: #ffffff; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 1px 2px rgba(27,37,51,0.04), 0 8px 24px -10px rgba(27,37,51,0.10)">
+<div style="background: #f4f6f9; padding: 32px 0 0 32px; box-sizing: border-box; overflow: hidden">
+<div style="background: #ffffff; border: 1px solid #d9dee6; border-right: 0; border-bottom: 0; border-radius: 10px 0 0 0; overflow: hidden">
+<div aria-hidden="true" style="height: 32px; display: flex; align-items: center; gap: 6px; padding: 0 12px; border-bottom: 1px solid #d9dee6"><span style="flex: none; width: 8px; height: 8px; border-radius: 9999px; background: #d9dee6"></span><span style="flex: none; width: 8px; height: 8px; border-radius: 9999px; background: #d9dee6"></span><span style="flex: none; width: 8px; height: 8px; border-radius: 9999px; background: #d9dee6"></span><span style="margin-left: 12px; flex: 0 1 160px; height: 16px; border-radius: 9999px; background: #f4f6f9"></span></div>
+<img src="img/ris-grafik.webp" alt="Grafik wizyt w meddo RIS" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: left top">
+</div>
+</div>
+<div style="padding: 40px; display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 700; letter-spacing: -0.3px">Dla pracowni</h3>
+<ul class="dots" style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 24px; color: #1b2533">
+<li>Cały proces w jednym miejscu, z rolami dla każdego</li>
+<li>Rozliczenia NFZ i raporty zarządcze</li>
+<li>Dokumenty pacjenta z podglądem DICOM</li>
+<li>Nowe osoby szybko wchodzą w system</li>
+</ul>
+</div>
+</article>
+
+<article style="flex: 1 1 320px; background: #ffffff; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 1px 2px rgba(27,37,51,0.04), 0 8px 24px -10px rgba(27,37,51,0.10)">
+<div style="background: #f4f6f9; padding: 32px 0 0 32px; box-sizing: border-box; overflow: hidden">
+<div style="background: #ffffff; border: 1px solid #d9dee6; border-right: 0; border-bottom: 0; border-radius: 10px 0 0 0; overflow: hidden">
+<div aria-hidden="true" style="height: 32px; display: flex; align-items: center; gap: 6px; padding: 0 12px; border-bottom: 1px solid #d9dee6"><span style="flex: none; width: 8px; height: 8px; border-radius: 9999px; background: #d9dee6"></span><span style="flex: none; width: 8px; height: 8px; border-radius: 9999px; background: #d9dee6"></span><span style="flex: none; width: 8px; height: 8px; border-radius: 9999px; background: #d9dee6"></span><span style="margin-left: 12px; flex: 0 1 160px; height: 16px; border-radius: 9999px; background: #f4f6f9"></span></div>
+<img src="img/editor-opisu.webp" alt="Edytor opisu badania w ciemnym motywie dla radiologa" style="display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: left top">
+</div>
+</div>
+<div style="padding: 40px; display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 700; letter-spacing: -0.3px">Dla radiologa</h3>
+<ul class="dots" style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 24px; color: #1b2533">
+<li>Wygodny edytor opisów z szablonami</li>
+<li>Role rezydenta i specjalisty przy zatwierdzaniu</li>
+<li>Badania porównawcze pod ręką</li>
+<li>Lista „Tylko moje” i adnotacje w zespole</li>
+</ul>
+</div>
+</article>
+
+<article style="flex: 1 1 320px; background: #ffffff; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 1px 2px rgba(27,37,51,0.04), 0 8px 24px -10px rgba(27,37,51,0.10)">
+<div style="background: #f4f6f9; padding: 32px 0 0 32px; box-sizing: border-box; overflow: hidden">
+<div style="display: grid">
+<div aria-hidden="true" style="grid-area: 1 / 1; visibility: hidden"><div style="height: 33px"></div><div style="aspect-ratio: 3 / 2"></div></div>
+<div style="grid-area: 1 / 1; contain: size; width: calc(100% + 56px); height: calc(100% + 120px); background: #ffffff; border: 1px solid #d9dee6; border-radius: 40px; padding: 10px; box-sizing: border-box">
+<div style="height: 100%; border: 1px solid #d9dee6; border-radius: 30px; box-sizing: border-box; padding: 12px 16px; display: flex; flex-direction: column; gap: 10px">
+<div aria-hidden="true" style="align-self: center; flex: none; width: 64px; height: 18px; border-radius: 9999px; background: #f4f6f9"></div>
+<div style="font-size: 13px; line-height: 20px; font-weight: 600; color: #5a6778; text-align: center">SMS · teraz</div>
+<div style="max-width: calc(100% - 96px); background: #f4f6f9; border-radius: 16px 16px 16px 4px; padding: 10px 14px; font-size: 14px; line-height: 20px; color: #1b2533">Dzień dobry! Opis Twojego badania MR jest gotowy. Odbierzesz go tutaj: <span style="color: #376eae; text-decoration: underline">meddo.pl/w/…</span></div>
+<div style="max-width: calc(100% - 96px); background: #f4f6f9; border-radius: 16px 16px 16px 4px; padding: 10px 14px; font-size: 14px; line-height: 20px; color: #1b2533">Obrazy pobierzesz po podaniu kodu z SMS.</div>
+</div>
+</div>
+</div>
+</div>
+<div style="padding: 40px; display: flex; flex-direction: column; gap: 16px">
+<h3 style="margin: 0; font-size: 28px; line-height: 36px; font-weight: 700; letter-spacing: -0.3px">Dla pacjenta</h3>
+<ul class="dots" style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 24px; color: #1b2533">
+<li>Rezerwacja online, także przez ZnanyLekarz</li>
+<li>Przypomnienia i powiadomienia SMS</li>
+<li>Opis i obrazy online, przez bezpieczny link</li>
+<li>Płyta CD/DVD, gdy jest potrzebna</li>
+</ul>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- TECHNOLOGIA -->
+<section style="padding: 128px 24px; background: #ffffff">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-start">
+<div style="flex: 1 1 360px">
+<div style="font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; color: #376eae; text-transform: uppercase">Spokojna głowa</div>
+<h2 style="margin: 8px 0 0; font-size: clamp(32px, 3.4vw, 44px); line-height: 1.18; font-weight: 700; letter-spacing: -0.8px">Technologia, o której nie musisz myśleć</h2>
+<p style="margin: 24px 0 0; max-width: 440px; font-size: 20px; line-height: 32px; color: #5a6778">W diagnostyce bezpieczeństwo danych to podstawa, nie dodatek. O to, żeby system działał stabilnie i był zawsze aktualny, dbamy my.</p>
+</div>
+<div style="flex: 2 1 560px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px 48px">
+<div style="padding-top: 24px; border-top: 1px solid #d9dee6; display: flex; flex-direction: column; gap: 8px">
+<span aria-hidden="true" style="width: 48px; height: 48px; border-radius: 9999px; background: #eaf1f9; display: flex; align-items: center; justify-content: center; margin-bottom: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#376eae" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"></rect><path d="M3 9h18"></path><path d="M6.5 6.5h.01M9 6.5h.01"></path></svg></span>
+<h3 style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 600">Działa w przeglądarce</h3>
+<p style="margin: 0; font-size: 15px; line-height: 24px; color: #5a6778">Bez instalowania programów na stanowiskach. Także na tabletach w rejestracji.</p>
+</div>
+<div style="padding-top: 24px; border-top: 1px solid #d9dee6; display: flex; flex-direction: column; gap: 8px">
+<span aria-hidden="true" style="width: 48px; height: 48px; border-radius: 9999px; background: #eaf1f9; display: flex; align-items: center; justify-content: center; margin-bottom: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#376eae" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h10a4 4 0 0 0 .6-7.95A6 6 0 0 0 6.1 9.2 4.5 4.5 0 0 0 7 18z"></path></svg></span>
+<h3 style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 600">Chmura albo Twoja serwerownia</h3>
+<p style="margin: 0; font-size: 15px; line-height: 24px; color: #5a6778">Ty decydujesz, czy obrazy badań są przechowywane w&nbsp;chmurze, czy&nbsp;u&nbsp;Ciebie.</p>
+</div>
+<div style="padding-top: 24px; border-top: 1px solid #d9dee6; display: flex; flex-direction: column; gap: 8px">
+<span aria-hidden="true" style="width: 48px; height: 48px; border-radius: 9999px; background: #eaf1f9; display: flex; align-items: center; justify-content: center; margin-bottom: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#376eae" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg></span>
+<h3 style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 600">Dane pod ochroną</h3>
+<p style="margin: 0; font-size: 15px; line-height: 24px; color: #5a6778">Szyfrowana transmisja i przechowywanie, które zapewnia pełną poufność.</p>
+</div>
+<div style="padding-top: 24px; border-top: 1px solid #d9dee6; display: flex; flex-direction: column; gap: 8px">
+<span aria-hidden="true" style="width: 48px; height: 48px; border-radius: 9999px; background: #eaf1f9; display: flex; align-items: center; justify-content: center; margin-bottom: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#376eae" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.4-3 7.9-7 9.5-4-1.6-7-5.1-7-9.5V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
+<h3 style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 600">Odporność na awarie</h3>
+<p style="margin: 0; font-size: 15px; line-height: 24px; color: #5a6778">Redundancja, audyt i śledzenie zdarzeń w całym systemie.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- WSPÓŁPRACA -->
+<section style="padding: 128px 24px; background: #eaf1f9">
+<div style="max-width: 1200px; margin: 0 auto">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 24px 64px">
+<div style="max-width: 640px">
+<div style="font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; color: #376eae; text-transform: uppercase">Jak pracujemy</div>
+<h2 style="margin: 8px 0 0; font-size: clamp(32px, 3.4vw, 44px); line-height: 1.18; font-weight: 700; letter-spacing: -0.8px">Wdrożenie to początek współpracy, nie jej koniec</h2>
+</div>
+<a class="btn btn-primary" href="#kontakt">Zacznijmy od rozmowy</a>
+</div>
+<ol style="list-style: none; margin: 64px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
+<li style="background: #ffffff; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(27,37,51,0.04), 0 8px 24px -10px rgba(27,37,51,0.10)">
+<span aria-hidden="true" style="width: 48px; height: 48px; border-radius: 9999px; background: #376eae; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 20px; line-height: 28px; font-weight: 800">1</span>
+<h3 style="margin: 12px 0 0; font-size: 20px; line-height: 28px; font-weight: 600">Rozmowa</h3>
+<p style="margin: 0; font-size: 15px; line-height: 24px; color: #5a6778">Poznajemy Twoją pracownię: aparaty, zespół i systemy, z których już korzystasz.</p>
+</li>
+<li style="background: #ffffff; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(27,37,51,0.04), 0 8px 24px -10px rgba(27,37,51,0.10)">
+<span aria-hidden="true" style="width: 48px; height: 48px; border-radius: 9999px; background: #376eae; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 20px; line-height: 28px; font-weight: 800">2</span>
+<h3 style="margin: 12px 0 0; font-size: 20px; line-height: 28px; font-weight: 600">Prezentacja</h3>
+<p style="margin: 0; font-size: 15px; line-height: 24px; color: #5a6778">Pokazujemy meddo na scenariuszach z Twojej codziennej pracy, nie na slajdach.</p>
+</li>
+<li style="background: #ffffff; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(27,37,51,0.04), 0 8px 24px -10px rgba(27,37,51,0.10)">
+<span aria-hidden="true" style="width: 48px; height: 48px; border-radius: 9999px; background: #376eae; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 20px; line-height: 28px; font-weight: 800">3</span>
+<h3 style="margin: 12px 0 0; font-size: 20px; line-height: 28px; font-weight: 600">Wdrożenie</h3>
+<p style="margin: 0; font-size: 15px; line-height: 24px; color: #5a6778">Konfigurujemy system i integracje, a dane z dotychczasowych rozwiązań przenosimy według planu.</p>
+</li>
+<li style="background: #1b2533; color: #ffffff; border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 12px; position: relative; overflow: hidden; box-shadow: 0 1px 2px rgba(27,37,51,0.04), 0 8px 24px -10px rgba(27,37,51,0.10)">
+<svg aria-hidden="true" width="80" height="80" viewBox="0 0 80 80" style="position: absolute; right: -14px; top: -14px"><g fill="#fe7363"><rect x="0" y="27" width="80" height="26" rx="13"></rect><rect x="27" y="0" width="26" height="80" rx="13"></rect></g></svg>
+<span aria-hidden="true" style="width: 48px; height: 48px; border-radius: 9999px; background: #ffffff; color: #1b2533; display: flex; align-items: center; justify-content: center; font-size: 20px; line-height: 28px; font-weight: 800">4</span>
+<h3 style="margin: 12px 0 0; font-size: 20px; line-height: 28px; font-weight: 600">Codzienne wsparcie</h3>
+<p style="margin: 0; font-size: 15px; line-height: 24px; color: #b6c0cd">Szkolimy zespół i zostajemy z Tobą: kompetentna pomoc techniczna i regularne aktualizacje.</p>
+</li>
+</ol>
+<figure style="margin: 64px 0 0; display: flex; flex-wrap: wrap; gap: 24px 40px; align-items: center">
+<svg aria-hidden="true" width="40" height="40" viewBox="0 0 40 40"><g fill="#fe7363"><rect x="0" y="13" width="40" height="14" rx="7"></rect><rect x="13" y="0" width="14" height="40" rx="7"></rect></g></svg>
+<blockquote style="margin: 0; flex: 1 1 600px; font-size: clamp(22px, 2.2vw, 28px); line-height: 1.4; font-weight: 600; letter-spacing: -0.3px">Rozwijamy meddo wspólnie z użytkownikami – łącząc zaawansowane możliwości techniczne z prostotą codziennej obsługi.</blockquote></figure>
+</div>
+</section>
+
+<!-- MAPA -->
+<section style="padding: 128px 24px">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 64px; align-items: center">
+<div style="flex: 1 1 420px">
+<div style="font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; color: #376eae; text-transform: uppercase">DZIAŁAMY W CAŁEJ POLSCE</div>
+<h2 style="margin: 8px 0 0; font-size: clamp(32px, 3.4vw, 44px); line-height: 1.18; font-weight: 700; letter-spacing: -0.8px">Dziesiątki pracowni. Setki radiologów. <span style="color: #376eae">Jeden system.</span></h2>
+<p style="margin: 24px 0 0; max-width: 520px; font-size: 20px; line-height: 32px; color: #5a6778">Pracujemy z pracowniami i sieciami pracowni w całej Polsce – od niewielkich placówek po sieci z kilkoma oddziałami. Każda z nich pomaga nam rozwijać meddo.</p>
+<dl style="margin: 40px 0 0; display: flex; flex-wrap: wrap; gap: 40px">
+<div style="display: flex; flex-direction: column-reverse"><dt style="font-size: 15px; line-height: 24px; color: #5a6778">rozwijamy meddo od</dt><dd style="margin: 0; font-size: 44px; line-height: 52px; font-weight: 800; letter-spacing: -0.8px">2012</dd></div>
+<div style="display: flex; flex-direction: column-reverse"><dt style="font-size: 15px; line-height: 24px; color: #5a6778">pracowni i sieci</dt><dd style="margin: 0; font-size: 44px; line-height: 52px; font-weight: 800; letter-spacing: -0.8px; color: #5a6778">[XX]</dd></div>
+<div style="display: flex; flex-direction: column-reverse"><dt style="font-size: 15px; line-height: 24px; color: #5a6778">radiologów w systemie</dt><dd style="margin: 0; font-size: 44px; line-height: 52px; font-weight: 800; letter-spacing: -0.8px; color: #5a6778">[XXX]</dd></div>
+</dl>
+</div>
+<div style="flex: 1 1 480px; background: #eaf1f9; border-radius: 16px; padding: 48px; box-sizing: border-box; display: flex; justify-content: center">
+<svg role="img" aria-label="Mapa Polski z zaznaczonymi pracowniami korzystającymi z meddo" viewBox="0 0 424 392" style="width: 100%; max-width: 440px; height: auto">
+<defs><g id="pl-a"><rect x="-7" y="-2.5" width="14" height="5" rx="2.5"></rect><rect x="-2.5" y="-7" width="5" height="14" rx="2.5"></rect></g></defs>
+<path d="M18 74 L70 55 L110 32 L150 20 L186 16 L194 42 L226 42 L242 39 L310 46 L362 45 L390 55 L390 74 L406 119 L394 157 L378 176 L394 202 L398 221 L414 260 L406 298 L386 304 L358 349 L366 381 L350 381 L314 362 L286 365 L254 375 L242 362 L226 349 L206 356 L194 330 L170 324 L154 308 L126 295 L106 282 L98 298 L50 260 L42 253 L50 228 L38 189 L32 157 L16 138 L26 112 Z" fill="#ffffff" stroke="#376eae" stroke-width="2" stroke-linejoin="round"></path>
+<g fill="#376eae">
+<use href="#pl-a" x="194" y="48"></use><use href="#pl-a" x="40" y="104"></use><use href="#pl-a" x="126" y="170"></use><use href="#pl-a" x="131" y="253"></use><use href="#pl-a" x="248" y="320"></use><use href="#pl-a" x="290" y="181"></use><use href="#pl-a" x="228" y="211"></use><use href="#pl-a" x="353" y="244"></use><use href="#pl-a" x="376" y="123"></use><use href="#pl-a" x="170" y="124"></use><use href="#pl-a" x="330" y="321"></use><use href="#pl-a" x="270" y="82"></use><use href="#pl-a" x="96" y="247"></use><use href="#pl-a" x="210" y="307"></use>
+</g>
+</svg>
+</div>
+</div>
+</section>
+
+<!-- INTEGRACJE -->
+<section style="padding: 128px 24px; background: #f4f6f9">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center">
+<div style="font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; color: #376eae; text-transform: uppercase">Integracje</div>
+<h2 style="margin: 8px 0 0; max-width: 760px; font-size: clamp(32px, 3.4vw, 44px); line-height: 1.18; font-weight: 700; letter-spacing: -0.8px">Łączymy się z tym, czego już używasz</h2>
+<p style="margin: 24px 0 0; max-width: 680px; font-size: 20px; line-height: 32px; color: #5a6778">Budujemy integracje, które skracają drogę od badania do diagnozy – bez przepisywania danych i przełączania się między programami.</p>
+<ul aria-label="Przykładowe integracje" style="list-style: none; margin: 64px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; max-width: 960px">
+<li style="background: #ffffff; border: 1px solid #d9dee6; border-radius: 9999px; padding: 12px 24px; font-size: 16px; line-height: 24px; font-weight: 600">DICOM</li>
+<li style="background: #ffffff; border: 1px solid #d9dee6; border-radius: 9999px; padding: 12px 24px; font-size: 16px; line-height: 24px; font-weight: 600">HL7</li>
+<li style="background: #ffffff; border: 1px solid #d9dee6; border-radius: 9999px; padding: 12px 24px; font-size: 16px; line-height: 24px; font-weight: 600">Systemy HIS</li>
+<li style="background: #ffffff; border: 1px solid #d9dee6; border-radius: 9999px; padding: 12px 24px; font-size: 16px; line-height: 24px; font-weight: 600">EDM</li>
+<li style="background: #ffffff; border: 1px solid #d9dee6; border-radius: 9999px; padding: 12px 24px; font-size: 16px; line-height: 24px; font-weight: 600">NFZ</li>
+<li style="background: #ffffff; border: 1px solid #d9dee6; border-radius: 9999px; padding: 12px 24px; font-size: 16px; line-height: 24px; font-weight: 600">KSeF</li>
+<li style="background: #ffffff; border: 1px solid #d9dee6; border-radius: 9999px; padding: 12px 24px; font-size: 16px; line-height: 24px; font-weight: 600">P1</li>
+<li style="background: #ffffff; border: 1px solid #d9dee6; border-radius: 9999px; padding: 12px 24px; font-size: 16px; line-height: 24px; font-weight: 600">ZnanyLekarz</li>
+<li style="background: #ffffff; border: 1px solid #d9dee6; border-radius: 9999px; padding: 12px 24px; font-size: 16px; line-height: 24px; font-weight: 600">Przeglądarki DICOM</li>
+<li style="background: #ffffff; border: 1px solid #d9dee6; border-radius: 9999px; padding: 12px 24px; font-size: 16px; line-height: 24px; font-weight: 600">Narzędzia AI</li>
+<li style="background: #ffffff; border: 1px solid #d9dee6; border-radius: 9999px; padding: 12px 24px; font-size: 16px; line-height: 24px; font-weight: 600">Nagrywarki Epson (CD/DVD)</li></ul>
+</div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="dark" style="background: #1b2533; color: #ffffff; padding: 128px 24px">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 64px; align-items: flex-start">
+<div style="flex: 1 1 420px">
+<div style="font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; color: #8fb5e6; text-transform: uppercase">Porozmawiajmy</div>
+<h2 style="margin: 8px 0 0; font-size: clamp(32px, 3.4vw, 44px); line-height: 1.18; font-weight: 700; letter-spacing: -0.8px">Pokażemy meddo na przykładzie Twojej pracowni</h2>
+<p style="margin: 24px 0 0; max-width: 480px; font-size: 20px; line-height: 32px; color: #b6c0cd">Umów prezentację – przejdziemy razem przez dzień Twojej pracowni i odpowiemy na pytania o wdrożenie.</p>
+<div style="margin-top: 40px; display: flex; flex-direction: column; gap: 8px">
+<a href="mailto:biuro@meddo.pl" style="color: #ffffff; font-size: 28px; line-height: 36px; font-weight: 700; text-decoration: none">biuro@meddo.pl</a>
+<a href="tel:+48884985555" style="color: #ffffff; font-size: 28px; line-height: 36px; font-weight: 700; text-decoration: none">+48 884 985 555</a>
+</div>
+<p style="margin: 24px 0 0; font-size: 15px; line-height: 24px; color: #b6c0cd">Meddo S.A. · ul. Dywizji Wołyńskiej 85 · 80-041 Gdańsk</p>
+</div>
+<form style="flex: 1 1 440px; background: #ffffff; color: #1b2533; border-radius: 16px; padding: 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px"><label for="a-name" style="font-size: 16px; line-height: 24px; font-weight: 600">Imię i nazwisko</label><input id="a-name" class="inp" type="text" autocomplete="name" required=""></div>
+<div style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 8px"><label for="a-tel" style="font-size: 16px; line-height: 24px; font-weight: 600">Telefon</label><input id="a-tel" class="inp" type="tel" autocomplete="tel" required=""></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="a-mail" style="font-size: 16px; line-height: 24px; font-weight: 600">E-mail</label><input id="a-mail" class="inp" type="email" autocomplete="email" required=""></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="a-msg" style="font-size: 16px; line-height: 24px; font-weight: 600">W czym możemy pomóc? <span style="font-weight: 400; color: #5a6778">(opcjonalnie)</span></label><textarea id="a-msg" class="inp" rows="4"></textarea></div>
+<label style="display: flex; gap: 12px; align-items: flex-start; font-size: 13px; line-height: 20px; color: #5a6778"><input type="checkbox" required="" style="width: 18px; height: 18px; margin: 1px 0 0; accent-color: #376eae; flex: none"><span>Zgadzam się na przetwarzanie moich danych przez Meddo S.A. w celu kontaktu i przedstawienia oferty. Szczegóły w <a href="#">polityce prywatności</a>.</span></label>
+<button class="btn btn-primary" type="submit" style="align-self: flex-start; margin-top: 8px">Wyślij wiadomość</button>
+</form>
+</div>
+</section>
+
+<!-- STOPKA -->
+<footer class="dark" style="background: #1b2533; color: #ffffff; padding: 0 24px 40px">
+<div style="max-width: 1200px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 64px; display: flex; flex-wrap: wrap; gap: 40px 64px">
+<div style="flex: 2 1 280px; display: flex; flex-direction: column; gap: 16px">
+<img src="img/meddo-logo.svg" alt="meddo" style="height: 30px; width: auto; align-self: flex-start">
+<p style="margin: 0; max-width: 340px; font-size: 15px; line-height: 24px; color: #b6c0cd">Dane, które przesyłasz przez meddo, są szyfrowane i przechowywane w sposób zapewniający pełną poufność.</p>
+</div>
+<nav aria-label="Produkty" style="flex: 1 1 140px; display: flex; flex-direction: column; gap: 8px"><div style="font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #8fb5e6; margin-bottom: 8px">Produkty</div><a class="fl" href="system-ris.html">System RIS</a><a class="fl" href="#">System PACS</a><a class="fl" href="#">Teleradiologia</a></nav>
+<nav aria-label="Firma" style="flex: 1 1 140px; display: flex; flex-direction: column; gap: 8px"><div style="font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #8fb5e6; margin-bottom: 8px">Firma</div><a class="fl" href="#">O nas</a><a class="fl" href="#kontakt">Kontakt</a><a class="fl" href="#">Logowanie</a></nav>
+<nav aria-label="Dokumenty" style="flex: 1 1 180px; display: flex; flex-direction: column; gap: 8px"><div style="font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #8fb5e6; margin-bottom: 8px">Dokumenty</div><a class="fl" href="#">Polityka prywatności</a><a class="fl" href="#">Klauzula informacyjna</a><a class="fl" href="#">Regulamin usług</a></nav>
+<nav aria-label="Partnerzy" style="flex: 1 1 140px; display: flex; flex-direction: column; gap: 8px"><div style="font-size: 13px; line-height: 16px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #8fb5e6; margin-bottom: 8px">Partnerzy</div><a class="fl" href="#">Radfellows</a><a class="fl" href="#">Medfellows</a></nav>
+</div>
+<div style="max-width: 1200px; margin: 64px auto 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 13px; line-height: 20px; color: #b6c0cd">
+<span>© 2026 Meddo S.A. Wszelkie prawa zastrzeżone.</span>
+<span>Pytania ogólne i inspektor ochrony danych: <a href="mailto:biuro@meddo.pl" style="color: #ffffff">biuro@meddo.pl</a></span>
+</div>
+</footer>
+
+</div>
+<script src="js/main.js" defer></script>
+</body>
+</html>
