@@ -12,7 +12,15 @@
 
     var tabs = Array.prototype.slice.call(bar.querySelectorAll('.tab'));
     var slides = Array.prototype.slice.call(document.querySelectorAll('[data-slide]'));
-    var active = 0, mode = 'auto', progress = 0, lastPick = 0;
+    var active = 0, mode = 'auto', progress = 0, lastPick = 0, hover = false;
+
+    // Kursor nad przyciskami lub treścią slajdu = ktoś czyta: zatrzymaj timer.
+    var root = bar.closest('.eko-slider') || bar.parentNode;
+    root.addEventListener('mouseenter', function () { hover = true; });
+    root.addEventListener('mouseleave', function () {
+      hover = false;
+      if (mode === 'manual') lastPick = Date.now(); // odliczanie bezczynności od nowa
+    });
 
     function render() {
       bar.setAttribute('data-mode', mode);
@@ -49,7 +57,7 @@
     });
 
     setInterval(function () {
-      if (document.hidden) return; // nie przewijaj, gdy karta przeglądarki jest w tle
+      if (document.hidden || hover) return; // karta w tle albo kursor nad sliderem
       if (mode === 'manual') {
         if (Date.now() - lastPick >= IDLE_MS) { mode = 'auto'; progress = 0; render(); }
         return;
